@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
 import { ExternalLink } from "lucide-react";
 import project1 from "@/assets/project1.jpg";
 import project2 from "@/assets/project2.jpg";
@@ -11,6 +12,7 @@ const projects = [
     github: "https://github.com",
     tags: ["React Native", "TypeScript"],
     color: "bg-primary/10",
+    category: "hand",
   },
   {
     title: "Data Dash",
@@ -19,6 +21,7 @@ const projects = [
     github: "https://github.com",
     tags: ["React", "D3.js"],
     color: "bg-secondary/10",
+    category: "hand",
   },
   {
     title: "Creative Studio",
@@ -27,6 +30,7 @@ const projects = [
     github: "https://github.com",
     tags: ["Next.js", "WebGL", "Socket.io"],
     color: "bg-accent/10",
+    category: "vibe",
   },
   {
     title: "Eco Tracker",
@@ -35,10 +39,19 @@ const projects = [
     github: "https://github.com",
     tags: ["Vue", "Tailwind CSS"],
     color: "bg-primary/10",
+    category: "vibe",
   },
 ];
 
+const tabs = [
+  { label: "Hand Coded", value: "hand" },
+  { label: "Vibe Coded", value: "vibe" },
+];
+
 const ProjectsSection = () => {
+  const [activeTab, setActiveTab] = useState("hand");
+  const filtered = projects.filter((p) => p.category === activeTab);
+
   return (
     <section id="projects" className="py-16 relative">
       <div className="container mx-auto px-6">
@@ -46,22 +59,44 @@ const ProjectsSection = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-10"
         >
           <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-3">
             My Projects 🚀
           </h2>
-          <p className="text-muted-foreground font-body text-lg">Things I've built & shipped</p>
+          <p className="text-muted-foreground font-body text-lg mb-8">Things I've built & shipped</p>
+
+          <div className="flex items-center justify-center gap-2 bg-muted/50 rounded-full p-1.5 w-fit mx-auto">
+            {tabs.map((tab) => (
+              <button
+                key={tab.value}
+                onClick={() => setActiveTab(tab.value)}
+                className="relative font-body text-sm font-medium px-6 py-2 rounded-full transition-colors z-10"
+                style={{
+                  color: activeTab === tab.value ? "hsl(var(--primary-foreground))" : "hsl(var(--muted-foreground))",
+                }}
+              >
+                {activeTab === tab.value && (
+                  <motion.div
+                    layoutId="project-pill"
+                    className="absolute inset-0 bg-primary rounded-full"
+                    style={{ zIndex: -1 }}
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  />
+                )}
+                {tab.label}
+              </button>
+            ))}
+          </div>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          {projects.map((project, i) => (
+          {filtered.map((project, i) => (
             <motion.div
               key={project.title}
               initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: i * 0.1 }}
               className="group rounded-2xl overflow-hidden bg-card border border-border shadow-sm hover:shadow-lg transition-shadow"
             >
               <div className={`aspect-video overflow-hidden ${project.color}`}>

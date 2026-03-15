@@ -28,7 +28,7 @@ const HeroSection = () => {
             I'm Mia Z
           </h1>
           <p className="text-xl md:text-2xl font-body text-muted-foreground max-w-lg leading-relaxed">
-            I love building things from scratch — whether it's a side project, a new travel route, or a 100-hour RPG playthrough.
+            I love building things from scratch - whether it's a side project, a new travel route, or a 100-hour RPG playthrough.
           </p>
           <motion.div
             initial={{ opacity: 0, y: 15 }}
