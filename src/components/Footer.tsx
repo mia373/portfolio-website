@@ -9,7 +9,7 @@ const Footer = () => {
         </p>
         <div className="flex items-center justify-center gap-4 mb-6">
           <a
-            href="https://github.com"
+            href="https://github.com/mia373"
             target="_blank"
             rel="noopener noreferrer"
             className="w-10 h-10 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors"
@@ -17,7 +17,7 @@ const Footer = () => {
             <Github size={18} />
           </a>
           <a
-            href="https://twitter.com"
+            href="https://x.com/mintz373"
             target="_blank"
             rel="noopener noreferrer"
             className="w-10 h-10 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors"
@@ -25,7 +25,7 @@ const Footer = () => {
             <Twitter size={18} />
           </a>
           <a
-            href="mailto:hello@example.com"
+            href="mailto:miazuox@gmail.com"
             className="w-10 h-10 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors"
           >
             <Mail size={18} />

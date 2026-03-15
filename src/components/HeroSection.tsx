@@ -28,7 +28,7 @@ const HeroSection = () => {
             I'm Mia Z
           </h1>
           <p className="text-xl md:text-2xl font-body text-muted-foreground max-w-lg leading-relaxed">
-            Creator, coder & color enthusiast. I build things, paint stuff, and chase boba around the world.
+            I love building things from scratch — whether it's a side project, a new travel route, or a 100-hour RPG playthrough.
           </p>
           <motion.div
             initial={{ opacity: 0, y: 15 }}
@@ -47,12 +47,6 @@ const HeroSection = () => {
               className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-accent text-accent-foreground font-display font-medium text-sm hover:scale-105 transition-transform">
               
               About me 🌈
-            </a>
-            <a
-              href="#resume"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-secondary text-secondary-foreground font-display font-medium text-sm hover:scale-105 transition-transform">
-              
-              View Resume 📄
             </a>
           </motion.div>
         </motion.div>
