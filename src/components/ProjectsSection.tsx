@@ -1,43 +1,71 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, Github } from "lucide-react";
+
+import carbon from "@/assets/carbon.png";
+import portfolio from "@/assets/portfolio.png";
+import hometasker from "@/assets/hometasker.png";
 import project1 from "@/assets/project1.jpg";
 import project2 from "@/assets/project2.jpg";
 
 const projects = [
   {
-    title: "Cool App",
-    description: "A playful mobile app for tracking daily habits with fun animations.",
-    image: project1,
-    github: "https://github.com",
-    tags: ["React Native", "TypeScript"],
+    title: "Distributed Search Engine",
+    description: "A search engine in C++ using a custom Chord Distributed Hash Table (DHT) to route queries across dynamic networks.",
+    image: carbon,
+    github: "https://github.com/mia373/distributed-search-engine",
+    live: "",
+    tags: ["C++", "Distributed Systems", "Network Routing", "OpenSSL"],
     color: "bg-primary/10",
     category: "hand",
   },
   {
-    title: "Data Dash",
-    description: "A beautiful dashboard for visualizing complex datasets in real-time.",
+    title: "Philadelphia Data Interface",
+    description: "A Java REST API and React dashboard for visualizing Philadelphia's COVID, property, and population data by ZIP code.",
     image: project2,
-    github: "https://github.com",
-    tags: ["React", "D3.js"],
+    github: "https://github.com/mia373/philadelphia-data-interface",
+    live: "",
+    tags: ["Java", "Javalin", "React", "TypeScript", "Recharts/React Leaflet", "JUnit 5"],
     color: "bg-secondary/10",
     category: "hand",
   },
   {
-    title: "Creative Studio",
-    description: "A collaborative design platform for teams to create and share digital art.",
-    image: project1,
-    github: "https://github.com",
-    tags: ["Next.js", "WebGL", "Socket.io"],
+    title: "Student Management System",
+    description: "A Java REST API and React dashboard for visualizing Philadelphia's COVID, property, and population data by ZIP code.",
+    image: project2,
+    github: "https://github.com/mia373/philadelphia-data-interface",
+    live: "",
+    tags: ["Java", "Javalin", "React", "TypeScript", "Recharts/React Leaflet", "JUnit 5"],
+    color: "bg-secondary/10",
+    category: "hand",
+  },
+  {
+    title: "Portfolio Website",
+    description: "The portfolio websit you are looking at.",
+    image: portfolio,
+    github: "https://github.com/mia373/portfolio-website",
+    live: "",
+    tags: ["Vite", "TypeScript", "React", "shadcn-ui", "Tailwind CSS"],
     color: "bg-accent/10",
     category: "vibe",
   },
   {
-    title: "Eco Tracker",
-    description: "An app that helps users track and reduce their carbon footprint.",
+    title: "AI-Assisted Home Tasker",
+    description: "A gamified household task manager - earn points for chores, compete with your housemates.",
+    image: hometasker,
+    github: "https://github.com/mia373/tidy-up/blob/main/DEMO.md",
+    live: "",
+    tags: ["React Native", "Supabase", "Gemini API", "Expo"],
+    color: "bg-primary/10",
+    category: "vibe",
+  },
+    {
+    title: "LA Tennis Court Finder",
+    description: "A gamified household task manager - earn points for chores, compete with your housemates.",
     image: project2,
-    github: "https://github.com",
-    tags: ["Vue", "Tailwind CSS"],
+    github: "https://github.com/mia373/tidy-up/blob/main/DEMO.md",
+    live: "",
+    tags: ["React Native", "Supabase", "Gemini API", "Expo"],
     color: "bg-primary/10",
     category: "vibe",
   },
@@ -111,14 +139,30 @@ const ProjectsSection = () => {
                   <h3 className="text-xl font-display font-semibold text-foreground">
                     {project.title}
                   </h3>
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    <ExternalLink size={18} />
-                  </a>
+                  <div className="flex items-center gap-2">
+                    {project.github && (
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-muted-foreground hover:text-primary transition-colors"
+                        title="GitHub"
+                      >
+                        <Github size={18} />
+                      </a>
+                    )}
+                    {project.live && (
+                      <a
+                        href={project.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-muted-foreground hover:text-primary transition-colors"
+                        title="Live Demo"
+                      >
+                        <ExternalLink size={18} />
+                      </a>
+                    )}
+                  </div>
                 </div>
                 <p className="text-muted-foreground font-body text-sm mb-4">
                   {project.description}
