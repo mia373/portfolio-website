@@ -82,7 +82,7 @@ const projects = [
     title: "AI-Assisted Home Tasker",
     description: "A gamified household task manager - earn points for chores, compete with your housemates.",
     image: hometasker,
-    github: "https://github.com/mia373/tidy-up/blob/main/DEMO.md",
+    github: "https://github.com/mia373/tidy-up",
     live: "",
     tags: ["React Native", "Supabase", "Gemini API", "Expo"],
     color: "bg-primary/10",
