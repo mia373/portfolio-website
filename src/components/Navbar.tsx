@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const navItems = [
   { label: "Projects", href: "#projects" },
@@ -8,32 +8,25 @@ const navItems = [
 
 const Navbar = () => {
   const [activeItem, setActiveItem] = useState("#projects");
+  const clickedRef = useRef(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPosition = window.scrollY + 150;
-      
-      const sections = navItems.map(item => {
+      if (clickedRef.current) return;
+      const scrollPosition = window.scrollY + 200;
+
+      let current = navItems[0].href;
+      for (const item of navItems) {
         const element = document.querySelector(item.href) as HTMLElement;
         if (element) {
-          const rect = element.getBoundingClientRect();
-          const offsetTop = window.scrollY + rect.top;
-          return {
-            id: item.href,
-            offsetTop,
-            offsetBottom: offsetTop + element.offsetHeight
-          };
+          const offsetTop = element.getBoundingClientRect().top + window.scrollY;
+          if (scrollPosition >= offsetTop) {
+            current = item.href;
+          }
         }
-        return null;
-      }).filter(Boolean);
-
-      const current = sections.find(section => 
-        section && scrollPosition >= section.offsetTop && scrollPosition < section.offsetBottom
-      );
-
-      if (current) {
-        setActiveItem(current.id);
       }
+
+      setActiveItem(current);
     };
 
     handleScroll();
@@ -57,7 +50,11 @@ const Navbar = () => {
             <a
               key={item.label}
               href={item.href}
-              onClick={() => setActiveItem(item.href)}
+              onClick={() => {
+                setActiveItem(item.href);
+                clickedRef.current = true;
+                setTimeout(() => { clickedRef.current = false; }, 1000);
+              }}
               className="relative font-body text-sm font-medium px-4 py-2 rounded-full transition-colors z-10"
               style={{
                 color: activeItem === item.href ? 'hsl(var(--primary-foreground))' : 'hsl(var(--muted-foreground))'
