@@ -2,9 +2,18 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { ExternalLink, Github } from "lucide-react";
 
-import carbon from "@/assets/carbon.png";
+// Images for hand-coded projects
+import search from "@/assets/search.png";
+import glb from "@/assets/glb.png";
+import aicoach from "@/assets/aicoach.png";
+import student from "@/assets/student.png";
+
+// Images for vibe-coded projects
 import portfolio from "@/assets/portfolio.png";
 import hometasker from "@/assets/hometasker.png";
+import tennis2 from "@/assets/tennis2.png";
+
+
 import project1 from "@/assets/project1.jpg";
 import project2 from "@/assets/project2.jpg";
 
@@ -12,7 +21,7 @@ const projects = [
   {
     title: "Distributed Search Engine",
     description: "A search engine in C++ using a custom Chord Distributed Hash Table (DHT) to route queries across dynamic networks.",
-    image: carbon,
+    image: search,
     github: "https://github.com/mia373/distributed-search-engine",
     live: "",
     tags: ["C++", "Distributed Systems", "Network Routing", "OpenSSL"],
@@ -21,8 +30,8 @@ const projects = [
   },
   {
     title: "Penn NLP Lab Assistance",
-    description: "A Java REST API and React dashboard for visualizing Philadelphia's COVID, property, and population data by ZIP code.",
-    image: project2,
+    description: "Collaborated with PhD researchers at the University of Pennsylvania to curate a benchmark dataset for evaluating Multimodal Large Language Models (MLLMs) on 3D scene.",
+    image: glb,
     github: "https://github.com/mia373/penn-mllm-benchmark",
     live: "",
     tags: ["Multimodal Large Language Models (MLLMs)"],
@@ -31,11 +40,11 @@ const projects = [
   },
   {
     title: "AI Career Coach",
-    description: "A Java REST API and React dashboard for visualizing Philadelphia's COVID, property, and population data by ZIP code.",
-    image: project2,
-    github: "https://github.com/mia373/penn-mllm-benchmark",
+    description: "A multi-agent AI coach system with 4 specialized agents using LangGraph.",
+    image: aicoach,
+    github: "https://github.com/mia373/ai-career-coach",
     live: "",
-    tags: ["Multimodal Large Language Models (MLLMs)"],
+    tags: ["Python", "LangGraph", "LangChain", "Google Gemini LLM", "Serper API"],
     color: "bg-secondary/10",
     category: "hand",
   },
@@ -51,11 +60,11 @@ const projects = [
   },
   {
     title: "Student Management System",
-    description: "A Java REST API and React dashboard for visualizing Philadelphia's COVID, property, and population data by ZIP code.",
-    image: project2,
-    github: "https://github.com/mia373/philadelphia-data-interface",
+    description: "A console-based Java application implementing a multi-role student management system for an educational institution.",
+    image: student,
+    github: "https://github.com/mia373/student-management-system",
     live: "",
-    tags: ["Java", "Javalin", "React", "TypeScript", "Recharts/React Leaflet", "JUnit 5"],
+    tags: ["Java", "JUnit 5"],
     color: "bg-secondary/10",
     category: "hand",
   },
@@ -81,11 +90,11 @@ const projects = [
   },
     {
     title: "LA Tennis Court Finder",
-    description: "A gamified household task manager - earn points for chores, compete with your housemates.",
-    image: project2,
+    description: "A real-time web app that aggregates tennis court availability across West Los Angeles.",
+    image: tennis2,
     github: "https://github.com/mia373/west-la-tennis-finder",
     live: "",
-    tags: ["React Native", "Supabase", "Gemini API", "Expo"],
+    tags: ["TypeScript", "React", "Tailwind CSS", "Supabase", "Leaflet.js"],
     color: "bg-primary/10",
     category: "vibe",
   },
