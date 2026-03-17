@@ -7,12 +7,12 @@ import search from "@/assets/search.png";
 import glb from "@/assets/glb.png";
 import aicoach from "@/assets/aicoach.png";
 import student from "@/assets/student.png";
+import lc4 from "@/assets/lc4.png";
 
 // Images for vibe-coded projects
 import portfolio from "@/assets/portfolio.png";
 import hometasker from "@/assets/hometasker.png";
 import tennis2 from "@/assets/tennis2.png";
-
 
 import project1 from "@/assets/project1.jpg";
 import project2 from "@/assets/project2.jpg";
@@ -65,6 +65,16 @@ const projects = [
     github: "https://github.com/mia373/student-management-system",
     live: "",
     tags: ["Java", "JUnit 5"],
+    color: "bg-secondary/10",
+    category: "hand",
+  },
+  {
+    title: "LC4 Disassembler",
+    description: "A fully functional LC4 binary disassembler written in C. It converts .obj binary file into human-readable LC4 assembly code.",
+    image: lc4,
+    github: "https://github.com/mia373/lc4-disassembler",
+    live: "",
+    tags: ["C", "Valgrind"],
     color: "bg-secondary/10",
     category: "hand",
   },
