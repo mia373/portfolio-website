@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
 import { ExternalLink, Github } from "lucide-react";
 
 // Images for hand-coded projects
@@ -27,6 +26,16 @@ const projects = [
     tags: ["C++", "Distributed Systems", "Network Routing", "OpenSSL"],
     color: "bg-primary/10",
     category: "hand",
+  },
+  {
+    title: "AI-Assisted Home Tasker",
+    description: "A gamified household task manager - earn points for chores, compete with your housemates.",
+    image: hometasker,
+    github: "https://github.com/mia373/tidy-up",
+    live: "",
+    tags: ["React Native", "Supabase", "Gemini API", "Expo"],
+    color: "bg-primary/10",
+    category: "vibe",
   },
   {
     title: "Penn NLP Lab Assistance",
@@ -59,6 +68,26 @@ const projects = [
     category: "hand",
   },
   {
+    title: "Portfolio Website",
+    description: "The portfolio website you are looking at.",
+    image: portfolio,
+    github: "https://github.com/mia373/portfolio-website",
+    live: "",
+    tags: ["Vite", "TypeScript", "React", "shadcn-ui", "Tailwind CSS"],
+    color: "bg-accent/10",
+    category: "vibe",
+  },
+  {
+    title: "LA Tennis Court Finder",
+    description: "A real-time web app that aggregates tennis court availability across West Los Angeles.",
+    image: tennis2,
+    github: "https://github.com/mia373/west-la-tennis-finder",
+    live: "",
+    tags: ["TypeScript", "React", "Tailwind CSS", "Supabase", "Leaflet.js"],
+    color: "bg-primary/10",
+    category: "vibe",
+  },
+  {
     title: "Student Management System",
     description: "A console-based Java application implementing a multi-role student management system for an educational institution.",
     image: student,
@@ -78,47 +107,9 @@ const projects = [
     color: "bg-secondary/10",
     category: "hand",
   },
-  {
-    title: "Portfolio Website",
-    description: "The portfolio websit you are looking at.",
-    image: portfolio,
-    github: "https://github.com/mia373/portfolio-website",
-    live: "",
-    tags: ["Vite", "TypeScript", "React", "shadcn-ui", "Tailwind CSS"],
-    color: "bg-accent/10",
-    category: "vibe",
-  },
-  {
-    title: "AI-Assisted Home Tasker",
-    description: "A gamified household task manager - earn points for chores, compete with your housemates.",
-    image: hometasker,
-    github: "https://github.com/mia373/tidy-up",
-    live: "",
-    tags: ["React Native", "Supabase", "Gemini API", "Expo"],
-    color: "bg-primary/10",
-    category: "vibe",
-  },
-    {
-    title: "LA Tennis Court Finder",
-    description: "A real-time web app that aggregates tennis court availability across West Los Angeles.",
-    image: tennis2,
-    github: "https://github.com/mia373/west-la-tennis-finder",
-    live: "",
-    tags: ["TypeScript", "React", "Tailwind CSS", "Supabase", "Leaflet.js"],
-    color: "bg-primary/10",
-    category: "vibe",
-  },
-];
-
-const tabs = [
-  { label: "Hand Coded", value: "hand" },
-  { label: "Vibe Coded", value: "vibe" },
 ];
 
 const ProjectsSection = () => {
-  const [activeTab, setActiveTab] = useState("hand");
-  const filtered = projects.filter((p) => p.category === activeTab);
-
   return (
     <section id="projects" className="py-16 relative">
       <div className="container mx-auto px-6">
@@ -132,33 +123,10 @@ const ProjectsSection = () => {
             My Projects 🚀
           </h2>
           <p className="text-muted-foreground font-body text-lg mb-8">Things I've built & shipped</p>
-
-          <div className="flex items-center justify-center gap-2 bg-muted/50 rounded-full p-1.5 w-fit mx-auto">
-            {tabs.map((tab) => (
-              <button
-                key={tab.value}
-                onClick={() => setActiveTab(tab.value)}
-                className="relative font-body text-sm font-medium px-6 py-2 rounded-full transition-colors z-10"
-                style={{
-                  color: activeTab === tab.value ? "hsl(var(--primary-foreground))" : "hsl(var(--muted-foreground))",
-                }}
-              >
-                {activeTab === tab.value && (
-                  <motion.div
-                    layoutId="project-pill"
-                    className="absolute inset-0 bg-primary rounded-full"
-                    style={{ zIndex: -1 }}
-                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                  />
-                )}
-                {tab.label}
-              </button>
-            ))}
-          </div>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          {filtered.map((project, i) => (
+          {projects.map((project, i) => (
             <motion.div
               key={project.title}
               initial={{ opacity: 0, y: 30 }}
