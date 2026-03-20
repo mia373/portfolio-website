@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { ExternalLink, Github } from "lucide-react";
 
 // Images for hand-coded projects
@@ -26,6 +27,7 @@ const projects = [
     tags: ["C++", "Distributed Systems", "Network Routing", "OpenSSL"],
     color: "bg-primary/10",
     category: "hand",
+    filter: "Systems",
   },
   {
     title: "AI-Assisted Home Tasker",
@@ -33,9 +35,10 @@ const projects = [
     image: hometasker,
     github: "https://github.com/mia373/tidy-up",
     live: "",
-    tags: ["React Native", "Supabase", "Gemini API", "Expo"],
+    tags: ["React Native", "Supabase", "Gemini API", "Expo", "Claude Code"],
     color: "bg-primary/10",
     category: "vibe",
+    filter: "Full-Stack",
   },
   {
     title: "Penn NLP Lab Assistance",
@@ -46,6 +49,7 @@ const projects = [
     tags: ["Multimodal Large Language Models (MLLMs)"],
     color: "bg-secondary/10",
     category: "hand",
+    filter: "AI/ML",
   },
   {
     title: "AI Career Coach",
@@ -56,6 +60,7 @@ const projects = [
     tags: ["Python", "LangGraph", "LangChain", "Google Gemini LLM", "Serper API"],
     color: "bg-secondary/10",
     category: "hand",
+    filter: "AI/ML",
   },
   {
     title: "Philadelphia Data Interface",
@@ -66,6 +71,7 @@ const projects = [
     tags: ["Java", "Javalin", "React", "TypeScript", "Recharts/React Leaflet", "JUnit 5"],
     color: "bg-secondary/10",
     category: "hand",
+    filter: "Full-Stack",
   },
   {
     title: "Portfolio Website",
@@ -73,9 +79,10 @@ const projects = [
     image: portfolio,
     github: "https://github.com/mia373/portfolio-website",
     live: "",
-    tags: ["Vite", "TypeScript", "React", "shadcn-ui", "Tailwind CSS"],
+    tags: ["Vite", "TypeScript", "React", "shadcn-ui", "Tailwind CSS", "Lovable"],
     color: "bg-accent/10",
     category: "vibe",
+    filter: "Full-Stack",
   },
   {
     title: "LA Tennis Court Finder",
@@ -83,9 +90,10 @@ const projects = [
     image: tennis2,
     github: "https://github.com/mia373/west-la-tennis-finder",
     live: "",
-    tags: ["TypeScript", "React", "Tailwind CSS", "Supabase", "Leaflet.js"],
+    tags: ["TypeScript", "React", "Tailwind CSS", "Supabase", "Leaflet.js", "Lovable"],
     color: "bg-primary/10",
     category: "vibe",
+    filter: "Full-Stack",
   },
   {
     title: "Student Management System",
@@ -96,6 +104,7 @@ const projects = [
     tags: ["Java", "JUnit 5"],
     color: "bg-secondary/10",
     category: "hand",
+    filter: "Systems",
   },
   {
     title: "LC4 Disassembler",
@@ -106,10 +115,17 @@ const projects = [
     tags: ["C", "Valgrind"],
     color: "bg-secondary/10",
     category: "hand",
+    filter: "Systems",
   },
 ];
 
+const FILTERS = ["All", "Full-Stack", "Systems", "AI/ML"] as const;
+type Filter = typeof FILTERS[number];
+
 const ProjectsSection = () => {
+  const [activeFilter, setActiveFilter] = useState<Filter>("All");
+  const filtered = activeFilter === "All" ? projects : projects.filter((p) => p.filter === activeFilter);
+
   return (
     <section id="projects" className="py-16 relative">
       <div className="container mx-auto px-6">
@@ -122,16 +138,34 @@ const ProjectsSection = () => {
           <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-3">
             My Projects 🚀
           </h2>
-          <p className="text-muted-foreground font-body text-lg mb-8">Things I've built & shipped</p>
+          <p className="text-muted-foreground font-body text-lg mb-6">Things I've built & shipped</p>
+
+          <div className="flex justify-center gap-2 flex-wrap">
+            {FILTERS.map((f) => (
+              <button
+                key={f}
+                onClick={() => setActiveFilter(f)}
+                className={`px-4 py-1.5 rounded-full text-sm font-body font-medium transition-colors ${
+                  activeFilter === f
+                    ? "bg-primary text-primary-foreground"
+                    : "bg-muted text-muted-foreground hover:bg-muted/80"
+                }`}
+              >
+                {f}
+              </button>
+            ))}
+          </div>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          {projects.map((project, i) => (
+          <AnimatePresence mode="popLayout">
+          {filtered.map((project, i) => (
             <motion.div
               key={project.title}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.1 }}
+              exit={{ opacity: 0, y: 10 }}
+              transition={{ duration: 0.2, delay: i * 0.05 }}
               className="group rounded-2xl overflow-hidden bg-card border border-border shadow-sm hover:shadow-lg transition-shadow"
             >
               <div className={`aspect-video overflow-hidden ${project.color}`}>
@@ -187,6 +221,7 @@ const ProjectsSection = () => {
               </div>
             </motion.div>
           ))}
+          </AnimatePresence>
         </div>
       </div>
     </section>
