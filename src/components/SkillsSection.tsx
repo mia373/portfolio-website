@@ -1,32 +1,32 @@
 import { motion } from "framer-motion";
-import { Code2, Globe, Database, Wrench } from "lucide-react";
+import { Code2, Globe, Brain, Wrench } from "lucide-react";
 
 const skillCategories = [
   {
     title: "Languages",
     icon: Code2,
-    skills: ["C++", "Java", "C#", "C", "Python", "JavaScript"],
+    skills: ["Python", "Java", "C++", "C", "JavaScript/TypeScript"],
     color: "bg-primary/10",
     iconColor: "text-primary",
   },
   {
     title: "Web Development",
     icon: Globe,
-    skills: ["HTML/CSS", "React", "Node.js", "Express", "Vite"],
+    skills: ["HTML/CSS", "React", "Node.js", "Express.js"],
     color: "bg-secondary/10",
     iconColor: "text-secondary",
   },
   {
-    title: "Database Technologies",
-    icon: Database,
-    skills: ["PostgreSQL", "MongoDB", "Neo4j"],
+    title: "AI & ML",
+    icon: Brain,
+    skills: ["PyTorch", "TensorFlow", "scikit-learn", "NumPy"],
     color: "bg-accent/10",
     iconColor: "text-accent",
   },
   {
-    title: "Tools",
+    title: "Tools & Platforms",
     icon: Wrench,
-    skills: ["Git", "Docker", "Pandas"],
+    skills: ["Git/GitHub", "AWS", "GCP", "Docker", "MongoDB", "Supabase"],
     color: "bg-lavender/10",
     iconColor: "text-lavender",
   },

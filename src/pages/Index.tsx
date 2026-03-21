@@ -1,11 +1,12 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import ProjectsSection from "@/components/ProjectsSection";
-import EducationSection from "@/components/EducationSection";
-import ExperienceSection from "@/components/ExperienceSection";
 import SkillsSection from "@/components/SkillsSection";
-import HobbiesSection from "@/components/HobbiesSection";
-import ResumeSection from "@/components/ResumeSection";
+import JourneySection from "@/components/JourneySection";
+// import EducationSection from "@/components/EducationSection";
+// import ExperienceSection from "@/components/ExperienceSection";
+// import HobbiesSection from "@/components/HobbiesSection";
+// import ResumeSection from "@/components/ResumeSection";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -14,11 +15,8 @@ const Index = () => {
       <Navbar />
       <HeroSection />
       <ProjectsSection />
-      {/* <EducationSection /> */}
-      {/* <ExperienceSection /> */}
-      {/* <SkillsSection /> */}
-      <HobbiesSection />
-      {/* <ResumeSection /> */}
+      <SkillsSection />
+      <JourneySection />
       <Footer />
     </div>
   );
