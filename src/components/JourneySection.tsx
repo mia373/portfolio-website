@@ -20,7 +20,7 @@ const journeyItems = [
   },
   {
     type: "education",
-    title: "Master of Applied Science in Computer Science (Artificial Intelligence Concentration)",
+    title: "Master of Applied Science in Computer Science",
     organization: "University of Pennsylvania",
     period: "Aug 2024 – Present",
     gpa: "4.0 / 4.0",
