@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,35 +6,35 @@
 
 @layer base {
   :root {
-    --background: 50 100% 97%;
-    --foreground: 260 30% 15%;
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
 
     --card: 0 0% 100%;
-    --card-foreground: 260 30% 15%;
+    --card-foreground: 222 47% 11%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 260 30% 15%;
+    --popover-foreground: 222 47% 11%;
 
-    --primary: 340 82% 62%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 222 47% 11%;
+    --primary-foreground: 210 40% 98%;
 
-    --secondary: 170 60% 50%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
 
-    --muted: 50 40% 92%;
-    --muted-foreground: 260 10% 45%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
 
-    --accent: 45 95% 65%;
-    --accent-foreground: 260 30% 15%;
+    --accent: 38 92% 44%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 50 30% 88%;
-    --input: 50 30% 88%;
-    --ring: 340 82% 62%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 38 92% 50%;
 
-    --radius: 1rem;
+    --radius: 0.375rem;
 
     --coral: 15 85% 65%;
     --lavender: 270 60% 72%;
@@ -42,8 +42,8 @@
     --sky: 200 80% 65%;
     --peach: 25 100% 88%;
 
-    --font-display: 'Fredoka', sans-serif;
-    --font-body: 'Space Grotesk', sans-serif;
+    --font-display: 'Outfit', sans-serif;
+    --font-body: 'IBM Plex Sans', sans-serif;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -72,16 +72,16 @@
 @layer utilities {
   .text-gradient {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--lavender)), hsl(var(--sky)));
+    background-image: linear-gradient(135deg, hsl(var(--foreground)), hsl(var(--accent)));
   }
   .bg-blob-1 {
-    background: radial-gradient(circle at 20% 50%, hsl(var(--primary) / 0.15) 0%, transparent 50%);
+    background: radial-gradient(circle at 20% 50%, hsl(var(--accent) / 0.06) 0%, transparent 50%);
   }
   .bg-blob-2 {
-    background: radial-gradient(circle at 80% 30%, hsl(var(--lavender) / 0.15) 0%, transparent 50%);
+    background: radial-gradient(circle at 80% 30%, hsl(var(--accent) / 0.04) 0%, transparent 50%);
   }
   .bg-blob-3 {
-    background: radial-gradient(circle at 50% 80%, hsl(var(--sky) / 0.12) 0%, transparent 50%);
+    background: radial-gradient(circle at 50% 80%, hsl(var(--muted) / 0.5) 0%, transparent 50%);
   }
 }
 

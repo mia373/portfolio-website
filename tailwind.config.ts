@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ["Fredoka", "sans-serif"],
-        body: ["Space Grotesk", "sans-serif"],
+        display: ["Outfit", "sans-serif"],
+        body: ["IBM Plex Sans", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",

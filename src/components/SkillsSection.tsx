@@ -14,7 +14,7 @@ const skillCategories = [
     icon: Globe,
     skills: ["HTML/CSS", "React", "Node.js", "Express.js"],
     color: "bg-secondary/10",
-    iconColor: "text-secondary",
+    iconColor: "text-primary",
   },
   {
     title: "AI & ML",
@@ -75,7 +75,7 @@ const SkillsSection = () => {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.1 + idx * 0.05 }}
-                    className="text-xs font-body font-medium px-3 py-1.5 rounded-full bg-muted text-muted-foreground hover:bg-muted/80 transition-colors"
+                    className="text-[0.8125rem] font-body font-medium px-3 py-1.5 rounded-full bg-muted text-muted-foreground hover:bg-muted/80 transition-colors"
                   >
                     {skill}
                   </motion.span>

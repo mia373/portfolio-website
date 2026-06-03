@@ -15,8 +15,8 @@ const journeyItems = [
     title: "Technical Consultant",
     organization: "Google | Deloitte",
     period: "Jan 2022 – Mar 2025",
-    color: "bg-secondary/10",
-    iconColor: "text-secondary",
+    color: "bg-primary/10",
+    iconColor: "text-primary",
   },
   {
     type: "education",
@@ -74,8 +74,8 @@ const JourneySection = () => {
                   <h3 className="text-xl font-display font-bold text-foreground mb-0.5">
                     {item.title}
                   </h3>
-                  <p className="text-primary font-body font-medium text-sm">{item.organization}</p>
-                  <p className="text-xs text-muted-foreground font-body mt-0.5">{item.period}</p>
+                  <p className="text-primary font-body font-medium text-base">{item.organization}</p>
+                  <p className="text-sm text-muted-foreground font-body mt-0.5">{item.period}</p>
 
                   {item.gpa && (
                     <div className="mt-3">

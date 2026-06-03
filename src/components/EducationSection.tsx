@@ -5,31 +5,18 @@ const education = [
   {
     school: "University of Pennsylvania",
     degree: "Master of Computer and Information Technology",
-    period: "Aug 2023 - May 2025",
+    period: "Aug 2024 - Aug 2026",
     gpa: "4.0 / 4.0",
     coursework: [
       "Distributed Systems",
-      "Interactive Computer Graphics",
+      "Artificial Intelligence",
+      "Natural Language Processing",
       "Database and Information Systems",
       "Computer Systems Programming",
       "Data Structures and Algorithms",
-      "Discrete Mathematics",
     ],
     color: "bg-primary/10",
     iconColor: "text-primary",
-  },
-  {
-    school: "Nanyang Technological University",
-    degree: "Bachelor of Fine Arts in Media Art",
-    period: "Aug 2017 - May 2021",
-    gpa: "4.79 / 5.00",
-    achievements: [
-      "Winner of the Lee Kuan Yew Gold Medal, 2020/2021",
-      "Awarded Dean's List in AY 2017/2018, 2018/2019, 2020/2021",
-      "Recipient of the NTU-University Scholars Programme Scholarship",
-    ],
-    color: "bg-secondary/10",
-    iconColor: "text-secondary",
   },
 ];
 
