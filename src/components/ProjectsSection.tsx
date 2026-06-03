@@ -8,6 +8,8 @@ import glb from "@/assets/glb.png";
 import aicoach from "@/assets/aicoach.png";
 import student from "@/assets/student.png";
 import lc4 from "@/assets/lc4.png";
+import freeze from "@/assets/freeze.png";
+import routing from "@/assets/routing.png";
 
 // Images for vibe-coded projects
 import portfolio from "@/assets/portfolio.png";
@@ -19,17 +21,6 @@ import project2 from "@/assets/project2.jpg";
 
 const projects = [
   {
-    title: "Distributed Search Engine",
-    description: "A search engine in C++ using a custom Chord Distributed Hash Table (DHT) to route queries across dynamic networks.",
-    image: search,
-    github: "https://github.com/mia373/distributed-search-engine",
-    live: "",
-    tags: ["C++", "Distributed Systems", "Network Routing", "OpenSSL"],
-    color: "bg-primary/10",
-    category: "hand",
-    filter: "Systems",
-  },
-  {
     title: "AI-Assisted Home Tasker",
     description: "A gamified household task manager - earn points for chores, compete with your housemates.",
     image: hometasker,
@@ -39,28 +30,6 @@ const projects = [
     color: "bg-primary/10",
     category: "vibe",
     filter: "Full-Stack",
-  },
-  {
-    title: "Penn NLP Lab Assistance",
-    description: "Collaborated with PhD researchers at the University of Pennsylvania to curate a benchmark dataset for evaluating Multimodal Large Language Models (MLLMs) on 3D scene.",
-    image: glb,
-    github: "https://github.com/mia373/penn-mllm-benchmark",
-    live: "",
-    tags: ["Multimodal Large Language Models (MLLMs)"],
-    color: "bg-secondary/10",
-    category: "hand",
-    filter: "AI/ML",
-  },
-  {
-    title: "AI Career Coach",
-    description: "A multi-agent AI coach system with 4 specialized agents using LangGraph.",
-    image: aicoach,
-    github: "https://github.com/mia373/ai-career-coach",
-    live: "",
-    tags: ["Python", "LangGraph", "LangChain", "Google Gemini LLM", "Serper API"],
-    color: "bg-secondary/10",
-    category: "hand",
-    filter: "AI/ML",
   },
   {
     title: "Philadelphia Data Interface",
@@ -96,6 +65,28 @@ const projects = [
     filter: "Full-Stack",
   },
   {
+    title: "Distributed Search Engine",
+    description: "A search engine in C++ using a custom Chord Distributed Hash Table (DHT) to route queries across dynamic networks.",
+    image: search,
+    github: "https://github.com/mia373/distributed-search-engine",
+    live: "",
+    tags: ["C++", "Distributed Systems", "Network Routing", "Docker", "OpenSSL"],
+    color: "bg-primary/10",
+    category: "hand",
+    filter: "Systems",
+  },
+  {
+    title: "Multi-Protocol Network Simulator",
+    description: "This project extends the ns-3 network simulator to study routing and distributed lookup behavior in simulated IP networks. .",
+    image: routing,
+    github: "https://github.com/mia373/multi-protocol-network-simulator",
+    live: "",
+    tags: ["C++", "Distributed Systems", "Network Routing", "Docker", "ns-3"],
+    color: "bg-primary/10",
+    category: "hand",
+    filter: "Systems",
+  },
+  {
     title: "Student Management System",
     description: "A console-based Java application implementing a multi-role student management system for an educational institution.",
     image: student,
@@ -117,6 +108,39 @@ const projects = [
     category: "hand",
     filter: "Systems",
   },
+    {
+    title: "FreezeFrame",
+    description: "FreezeFrame turns 4 iPhones and a clap into a voice-controlled, AI-narrated bullet-time replay experience — the kind that used to cost half a million dollars and a stadium full of cameras.",
+    image: freeze,
+    github: "https://github.com/mia373/FreezeFrame",
+    live: "",
+    tags: ["Python", "3D Gaussian Splatting", "Computer Vision", "Google Gemini Live", "Three.js", "COLMAP"],
+    color: "bg-secondary/10",
+    category: "hand",
+    filter: ["Full-Stack", "AI/ML"],
+  },
+  {
+    title: "Penn NLP Lab Assistance",
+    description: "Collaborated with PhD researchers at the University of Pennsylvania to curate a benchmark dataset for evaluating Multimodal Large Language Models (MLLMs) on 3D scene.",
+    image: glb,
+    github: "https://github.com/mia373/penn-mllm-benchmark",
+    live: "",
+    tags: ["Multimodal Large Language Models (MLLMs)"],
+    color: "bg-secondary/10",
+    category: "hand",
+    filter: "AI/ML",
+  },
+  {
+    title: "AI Career Coach",
+    description: "A multi-agent AI coach system with 4 specialized agents using LangGraph.",
+    image: aicoach,
+    github: "https://github.com/mia373/ai-career-coach",
+    live: "",
+    tags: ["Python", "LangGraph", "LangChain", "Google Gemini LLM", "Serper API"],
+    color: "bg-secondary/10",
+    category: "hand",
+    filter: "AI/ML",
+  },
 ];
 
 const FILTERS = ["All", "Full-Stack", "Systems", "AI/ML"] as const;
@@ -124,7 +148,9 @@ type Filter = typeof FILTERS[number];
 
 const ProjectsSection = () => {
   const [activeFilter, setActiveFilter] = useState<Filter>("All");
-  const filtered = activeFilter === "All" ? projects : projects.filter((p) => p.filter === activeFilter);
+  const filtered = activeFilter === "All" ? projects : projects.filter((p) =>
+    Array.isArray(p.filter) ? p.filter.includes(activeFilter) : p.filter === activeFilter
+  );
 
   return (
     <section id="projects" className="py-16 relative">
@@ -136,7 +162,7 @@ const ProjectsSection = () => {
           className="text-center mb-10"
         >
           <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-3">
-            My Projects 🚀
+            My Projects
           </h2>
           <p className="text-muted-foreground font-body text-lg mb-6">Things I've built & shipped</p>
 

@@ -45,7 +45,7 @@ const EducationSection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-3">
-            Education 🎓
+            Education
           </h2>
           <p className="text-muted-foreground font-body text-lg">Learning never stops</p>
         </motion.div>

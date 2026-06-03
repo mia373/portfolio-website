@@ -25,7 +25,7 @@ const HobbiesSection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-3">
-            Beyond Code 🌈
+            Beyond Code
           </h2>
           <p className="text-muted-foreground font-body text-lg">The fun stuff that keeps me going</p>
         </motion.div>
@@ -43,7 +43,7 @@ const HobbiesSection = () => {
                 <MapPin className="text-sky" size={20} />
               </div>
               <h3 className="text-2xl font-display font-semibold text-foreground">
-                Places I've Been ✈️
+                Places I've Been
               </h3>
             </div>
             <WorldMap />
@@ -61,7 +61,7 @@ const HobbiesSection = () => {
                 <Gamepad2 className="text-lavender" size={20} />
               </div>
               <h3 className="text-2xl font-display font-semibold text-foreground">
-                Favorite Games 🎮
+                Favorite Games
               </h3>
             </div>
             <div className="grid grid-cols-1 gap-3">

@@ -40,19 +40,19 @@ const HeroSection = () => {
               href="#projects"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-primary-foreground font-display font-medium text-sm hover:scale-105 transition-transform">
               
-              See my work ✨
+              See my work
             </a>
             <a
               href="#skills"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-secondary text-secondary-foreground font-display font-medium text-sm hover:scale-105 transition-transform">
 
-              My Toolkit 🛠️
+              My Toolkit
             </a>
             <a
               href="#journey"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-accent text-accent-foreground font-display font-medium text-sm hover:scale-105 transition-transform">
 
-              My Story 🗺️
+              My Story
             </a>
           </motion.div>
         </motion.div>

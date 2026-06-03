@@ -13,7 +13,7 @@ const journeyItems = [
   {
     type: "work",
     title: "Technical Consultant",
-    organization: "Deloitte | Secondment to Google (3 years)",
+    organization: "Google | Deloitte",
     period: "Jan 2022 – Mar 2025",
     color: "bg-secondary/10",
     iconColor: "text-secondary",
@@ -22,7 +22,7 @@ const journeyItems = [
     type: "education",
     title: "Master of Applied Science in Computer Science",
     organization: "University of Pennsylvania",
-    period: "Aug 2024 – Present",
+    period: "Aug 2024 – Aug 2026",
     gpa: "4.0 / 4.0",
     color: "bg-primary/10",
     iconColor: "text-primary",
@@ -41,7 +41,7 @@ const JourneySection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-3">
-            Journey 🗺️
+            Journey
           </h2>
           <p className="text-muted-foreground font-body text-lg">Experience & education</p>
         </motion.div>
