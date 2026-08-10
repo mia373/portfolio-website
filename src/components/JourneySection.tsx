@@ -4,6 +4,14 @@ import { GraduationCap, Briefcase, Award } from "lucide-react";
 const journeyItems = [
   {
     type: "work",
+    title: "Software Engineer",
+    organization: "Capital One",
+    period: "Aug 2026 – Present",
+    color: "bg-primary/10",
+    iconColor: "text-primary",
+  },
+  {
+    type: "work",
     title: "Teaching Assistant – Computer Systems",
     organization: "University of Pennsylvania",
     period: "Aug 2025 – Dec 2025",

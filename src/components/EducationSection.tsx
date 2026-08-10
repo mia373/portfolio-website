@@ -4,7 +4,7 @@ import { GraduationCap, Award } from "lucide-react";
 const education = [
   {
     school: "University of Pennsylvania",
-    degree: "Master of Computer and Information Technology",
+    degree: "Master of Applied Science in Computer Science",
     period: "Aug 2024 - Aug 2026",
     gpa: "4.0 / 4.0",
     coursework: [

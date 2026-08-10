@@ -1,32 +1,32 @@
 import { motion } from "framer-motion";
-import { Code2, Globe, Brain, Wrench } from "lucide-react";
+import { Code2, Layers, Database, Cloud } from "lucide-react";
 
 const skillCategories = [
   {
     title: "Languages",
     icon: Code2,
-    skills: ["Python", "Java", "C++", "C", "JavaScript/TypeScript"],
+    skills: ["Java", "Python", "C++", "C", "JavaScript", "TypeScript", "SQL", "HTML/CSS"],
     color: "bg-primary/10",
     iconColor: "text-primary",
   },
   {
-    title: "Web Development",
-    icon: Globe,
-    skills: ["HTML/CSS", "React", "Node.js", "Express.js"],
+    title: "Frameworks",
+    icon: Layers,
+    skills: ["Spring Boot", "React", "Node.js", "Express", "PyTorch", "TensorFlow", "scikit-learn", "NumPy"],
     color: "bg-secondary/10",
     iconColor: "text-primary",
   },
   {
-    title: "AI & ML",
-    icon: Brain,
-    skills: ["PyTorch", "TensorFlow", "scikit-learn", "NumPy"],
+    title: "Databases",
+    icon: Database,
+    skills: ["PostgreSQL", "MongoDB", "Neo4j", "Supabase"],
     color: "bg-accent/10",
     iconColor: "text-accent",
   },
   {
-    title: "Tools & Platforms",
-    icon: Wrench,
-    skills: ["Git/GitHub", "AWS", "GCP", "Docker", "MongoDB", "Supabase"],
+    title: "Cloud & Tools",
+    icon: Cloud,
+    skills: ["AWS", "GCP", "Docker", "Git/GitHub"],
     color: "bg-lavender/10",
     iconColor: "text-lavender",
   },
@@ -43,13 +43,12 @@ const SkillsSection = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-3">
+          <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground">
             Skills
           </h2>
-          <p className="text-muted-foreground font-body text-lg">My technical toolkit</p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
           {skillCategories.map((category, i) => (
             <motion.div
               key={category.title}
@@ -75,7 +74,7 @@ const SkillsSection = () => {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.1 + idx * 0.05 }}
-                    className="text-[0.8125rem] font-body font-medium px-3 py-1.5 rounded-full bg-muted text-muted-foreground hover:bg-muted/80 transition-colors"
+                    className="text-sm font-body font-medium px-3 py-1.5 rounded-full bg-muted text-muted-foreground hover:bg-muted/80 transition-colors"
                   >
                     {skill}
                   </motion.span>
