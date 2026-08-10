@@ -206,7 +206,7 @@ export const projectsFor = (filter: Filter): Project[] => {
 };
 
 // Shown on the home page, in this order. Titles must match `projects` entries.
-const FEATURED_TITLES = ["DisclosureAI", "FundsRadar", "FreezeFrame", "Distributed Search Engine"];
+const FEATURED_TITLES = ["FundsRadar", "FreezeFrame", "Distributed Search Engine", "DisclosureAI"];
 
 export const featuredProjects: Project[] = FEATURED_TITLES.map((title) => {
   const project = projects.find((p) => p.title === title);
