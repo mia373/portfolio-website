@@ -26,7 +26,7 @@ const skillCategories = [
   {
     title: "Cloud & Tools",
     icon: Cloud,
-    skills: ["AWS", "GCP", "Docker", "Git/GitHub"],
+    skills: ["AWS", "GCP", "Docker", "Git/GitHub", "Linux"],
     color: "bg-lavender/10",
     iconColor: "text-lavender",
   },

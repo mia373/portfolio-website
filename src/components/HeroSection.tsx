@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Github, Linkedin, Twitter, Mail } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
 import profilePhoto from "@/assets/profile-photo.jpg";
 
 const HeroSection = () => {
@@ -59,15 +59,6 @@ const HeroSection = () => {
               className="w-10 h-10 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors">
 
               <Linkedin size={18} />
-            </a>
-            <a
-              href="https://x.com/mintz373"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="X"
-              className="w-10 h-10 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors">
-
-              <Twitter size={18} />
             </a>
             <a
               href="mailto:miazuox@gmail.com"
